@@ -7,6 +7,8 @@ import {
   ScrollRestoration,
 } from '@remix-run/react'
 import { Header } from './components/Header'
+import { SSRKeycloakProvider } from '@react-keycloak/ssr'
+import { keycloakProviderConfig } from './providers/keycloak'
 
 export default function App() {
   return (
@@ -28,8 +30,17 @@ export default function App() {
           color: '#f2f2f2',
         }}
       >
-        <Header />
-        <Outlet />
+        <SSRKeycloakProvider
+          keycloakConfig={{
+            url: 'http://localhost:8080/auth',
+            realm: 'ineo',
+            clientId: 'ineo-front',
+          }}
+        >
+          <Header />
+          <Outlet />
+        </SSRKeycloakProvider>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

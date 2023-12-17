@@ -7,11 +7,11 @@ export const Header = () => {
   return (
     <div
       style={{
-        height: '46px',
-        backgroundColor: '#0e0e0e',
-        flexGrow: 1,
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'space-between',
+        height: '46px',
+        backgroundColor: '#0e0e0e',
       }}
     >
       <div style={{ columnGap: 6, display: 'flex' }}>
@@ -28,6 +28,9 @@ export const Header = () => {
             {r}
           </Link>
         ))}
+      </div>
+      <div>
+        <button>Login</button>
       </div>
     </div>
   )
