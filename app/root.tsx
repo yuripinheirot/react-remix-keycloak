@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
+import { Header } from './components/Header'
 
 export default function App() {
   return (
@@ -19,7 +20,15 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body style={{ padding: 0, margin: 0 }}>
+      <body
+        style={{
+          padding: 0,
+          margin: 0,
+          backgroundColor: '#2e2e2e',
+          color: '#f2f2f2',
+        }}
+      >
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
